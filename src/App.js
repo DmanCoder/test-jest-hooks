@@ -3,19 +3,18 @@ import './App.css';
 
 import AccountBalance from './components/AccountBalance';
 
-function App() {
-  const accounts = {
-    balance: 1500,
-    savingBalance: 1328,
-  }
+const App = () => {
+  
   return (
-    <div className="app container">
+    <div data-test="app-component" className="app container">
       <div className="section">
-        <h1 className="has-text-centered title is-1">Welcome in the personal finance app!</h1>
-        <AccountBalance accounts={accounts} />
+        <h1 className="has-text-centered title is-1">
+          Welcome in the personal finance app!
+        </h1>
+        <AccountBalance />
       </div>
     </div>
   );
-}
+};
 
 export default App;

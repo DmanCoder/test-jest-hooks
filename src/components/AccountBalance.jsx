@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Notification from './Notification.jsx';
 
-const AccountBalance = (props) => {
+const AccountBalance = () => {
+  const accounts = {
+    balance: 1500,
+    savingBalance: 1328,
+  };
+
   const [balance, setBalance] = useState();
   const [savingBalance, setSavingBalance] = useState();
 
   useEffect(() => {
-    setBalance(props.accounts.balance);
-    setSavingBalance(props.accounts.savingBalance)
-  }, [props.accounts.balance, props.accounts.savingBalance])
+    setBalance(accounts.balance);
+    setSavingBalance(accounts.savingBalance)
+  }, [accounts.balance, accounts.savingBalance])
 
   const handleSavings = () => {
     if (balance > 1000) {
@@ -23,7 +28,7 @@ const AccountBalance = (props) => {
   }
 
   return (
-    <div className="columns">
+    <div data-test="account-balance-component" className="columns">
       <div className="column">
         <div className="box">
           <h4 className="title is-4">Your account balance:</h4>
